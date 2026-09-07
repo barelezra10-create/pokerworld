@@ -25,10 +25,12 @@ The optional `simulate_poker_hand` WebMCP tool uses the visible simulator state.
 
 ## Practice table and training reviews
 
-`/play` runs successive heads-up hands using free, non-redeemable chips. Blinds alternate, legal actions are checked, and betting is capped to effective stacks. The rule-based practice bot sees only its own hand and the board. Session state is in memory and resets on reload. This is not a GTO opponent or a real dealer connection.
+`/play` supports two to six seats with successive hands using free, non-redeemable chips. The button moves each hand. Legal actions, short all-ins, main/side pots and odd-chip splits are checked. Each rule-based opponent sees only its own hand and the board. Session state is in memory and resets on reload. This is not a GTO opponent or a real dealer connection.
 
 Dealer footage: https://mixkit.co/free-stock-video/people-playing-poker-at-a-casino-40489/ — Mixkit Stock Video Free License. The clip is labelled as recorded, decorative footage and does not determine dealt cards. Motion is disabled by default for reduced-motion and Save-Data preferences.
 
 `/reviews` covers three learning products using primary product documentation. Reviews explicitly state no hands-on testing and no active affiliate partnerships. Do not insert tracking links or claim a partnership without confirming the actual agreement and adding an adjacent disclosure.
 
 Run all model tests with `node --test tests/*.test.ts`. Coverage includes blinds, street order, minimum raises, all-in runouts, split pots, unmatched chip refunds, chip conservation and deck uniqueness.
+
+The table-size picker includes the human player. Busted opponents sit out; reset starts everyone at 1,000 chips. Cards animate from the dealer position and the human hand sits in the foreground. Optional table sounds require a user gesture. Recorded dealer footage remains decorative and cannot show the exact cards drawn by the simulation.
