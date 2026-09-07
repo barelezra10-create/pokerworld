@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {rankHand,simulate} from '../lib/poker.ts';
+const score=(cards:string)=>rankHand(cards.split(' '));
+test('straight flush outranks four of a kind',()=>assert(score('As Ks Qs Js Ts 2d 3c')>score('Ah Ad Ac As Kd 2c 3h')));
+test('two trips make the highest full house',()=>assert.equal(score('Ah Ad Ac Kh Kd Ks 2h'),score('Ah Ad Ac Kh Kd 3s 2h')));
+test('wheel straight ranks below six high',()=>assert(score('As 2h 3d 4c 5s Kh Qd')<score('2s 3h 4d 5c 6s Kh Qd')));
+test('board royal flush splits the pot',()=>assert.equal(simulate('2h 3h','4d 5d','As Ks Qs Js Ts').equity,50));
+test('completed board has exact winner',()=>assert.equal(simulate('As Ah','Ks Kh','2s 3s 4h 8d 9c').equity,100));
+test('rejects duplicates and invalid streets',()=>{assert.throws(()=>simulate('As Ah','As Kh',''));assert.throws(()=>simulate('As Ah','Ks Kh','2s'));assert.throws(()=>simulate('ZZ Ah','Ks Kh',''));});
