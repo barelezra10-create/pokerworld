@@ -34,3 +34,7 @@ Dealer footage: https://mixkit.co/free-stock-video/people-playing-poker-at-a-cas
 Run all model tests with `node --test tests/*.test.ts`. Coverage includes blinds, street order, minimum raises, all-in runouts, split pots, unmatched chip refunds, chip conservation and deck uniqueness.
 
 The table-size picker includes the human player. Busted opponents sit out; reset starts everyone at 1,000 chips. Cards animate from the dealer position and the human hand sits in the foreground. Optional table sounds require a user gesture. Recorded dealer footage remains decorative and cannot show the exact cards drawn by the simulation.
+
+## 3D dealer prototype
+
+The play table now uses a procedural Three.js character instead of stock footage. A timed sequence moves the arm and releases the actual DOM card to its seat or board position; player actions wait until the sequence ends. Two dealing rounds follow button-relative seat order. Reduced-motion skips choreography. WebGL failure leaves the standard table usable. This is a stylized prototype, not a photorealistic rigged/scanned character. Legacy video files remain unused.

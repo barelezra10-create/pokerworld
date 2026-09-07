@@ -1,2 +1,2 @@
-export const metadata={title:'Free Poker Practice Table | Pokerhub',description:'Play successive Texas hold’em hands at a two- to six-player practice table with free chips, hand history and recorded dealer footage. No deposits or cash prizes.',alternates:{canonical:'/play'}};
+export const metadata={title:'Free Poker Practice Table | Pokerhub',description:'Play successive Texas hold’em hands at a two- to six-player practice table with free chips, hand history and an animated 3D dealer. No deposits or cash prizes.',alternates:{canonical:'/play'}};
 export default function PlayLayout({children}:{children:React.ReactNode}){return children}
