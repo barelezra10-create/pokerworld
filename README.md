@@ -22,3 +22,13 @@ The simulator draws 10,000 random boards without replacement per runout. A compl
 Country coverage starts with the UK, France, Romania and the US (New Jersey online resources). Primary regulatory and venue sources are linked in the interface and were checked on 7 September 2026. Romania does not yet have a verified named venue. Confirm local eligibility, age and current licensing directly.
 
 The optional `simulate_poker_hand` WebMCP tool uses the visible simulator state. Its browser contract has not been independently verified because no supported WebMCP validation context was available. Core simulation checks and the production build were run.
+
+## Practice table and training reviews
+
+`/play` runs successive heads-up hands using free, non-redeemable chips. Blinds alternate, legal actions are checked, and betting is capped to effective stacks. The rule-based practice bot sees only its own hand and the board. Session state is in memory and resets on reload. This is not a GTO opponent or a real dealer connection.
+
+Dealer footage: https://mixkit.co/free-stock-video/people-playing-poker-at-a-casino-40489/ — Mixkit Stock Video Free License. The clip is labelled as recorded, decorative footage and does not determine dealt cards. Motion is disabled by default for reduced-motion and Save-Data preferences.
+
+`/reviews` covers three learning products using primary product documentation. Reviews explicitly state no hands-on testing and no active affiliate partnerships. Do not insert tracking links or claim a partnership without confirming the actual agreement and adding an adjacent disclosure.
+
+Run all model tests with `node --test tests/*.test.ts`. Coverage includes blinds, street order, minimum raises, all-in runouts, split pots, unmatched chip refunds, chip conservation and deck uniqueness.
